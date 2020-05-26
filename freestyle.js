@@ -50,8 +50,7 @@ function setup() {
   video = createCapture(VIDEO);
   video.hide()
   
-  //setTimeout(playSong, 3000);
-  //mySound.play()
+
   
   //Setup for poseNet
   poseNet = ml5.poseNet(video, modelReady)
@@ -82,17 +81,12 @@ function setup() {
     //console.log(poses)
   })
   
-  
-  button0 = createButton("Acid House")
-  button1 = createButton("Techno")
-  button2 = createButton("Hip Hop")
-
+ 
 
   for (i = 0; i < nDrops; i++) {
     drops.push(new Drop());
   }
 
-  button0.mousePressed(Acid);
   
   
 }
