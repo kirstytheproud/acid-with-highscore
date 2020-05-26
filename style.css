@@ -3,13 +3,14 @@
 body {
   
    background-color: yellow;
-  
+   background-image: url("https://cdn.glitch.com/ab2315b7-5002-452c-aa35-13b7b258fa66%2Fyellow-spiral-1.png?v=1590512481204");
 }
 
 
 h1 {
   font-style: italic;
   color: #373fff;
+  
 }
 
 * {
@@ -50,10 +51,16 @@ ul li a:hover {
 }
 
 div{
-padding-top: 40px;
   padding-left: 100px;
+  margin-top: 30px
   margin-left: 30px;
   margin-right: 300px;
-  
+  margin-bottom: 30px;
 }
 
+h2{
+   background-color: yellow;
+}
+p{
+   background-color: yellow;
+}

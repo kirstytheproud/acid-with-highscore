@@ -9,7 +9,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 480);
+  createCanvas(640, 480);
+  background(255, 255, 0);
   video = createCapture(VIDEO);
   video.hide()
   
@@ -22,7 +23,18 @@ function setup() {
 
 
 function draw() {
- image(video, 0, 0)
+
+  
+  push();
+    //move image by the width of image to the left
+  translate(video.width, 0);
+  //then scale it by -1 in the x-axis
+  //to flip the image
+  scale(-1, 1);
+  //draw video capture feed as image inside p5 canvas
+ image(video, 0, 0, width, height)
+  pop();
+  
   
 //clear();
   drops.forEach(function(d) {
