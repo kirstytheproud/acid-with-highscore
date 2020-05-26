@@ -1,6 +1,6 @@
 
 var acceleration = 0.08;
-var nDrops = 30;
+var nDrops = 50;
 var drops = [];
 
 function preload() {
@@ -9,7 +9,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(600, 480);
   video = createCapture(VIDEO);
   video.hide()
   
