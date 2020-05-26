@@ -340,7 +340,7 @@ class Firework extends Particle {
 
 		this.countdown--;
 		if (this.countdown <= 0) {
-			const explosionSize = random(20, 50);
+			const explosionSize = random(10, 40);
 			for (let i = 0; i < explosionSize; i++) {
 
 				const speed = random(5, 10);

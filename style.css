@@ -1,4 +1,4 @@
-/* CSS files add styling rules to your content */
+
 
 body {
   
@@ -63,4 +63,9 @@ h2{
 }
 p{
    background-color: yellow;
+}
+
+.p5Canvas {
+  margin-left: 90px;
+  
 }
