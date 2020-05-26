@@ -8,23 +8,18 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
      <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+   <script src="https://cdn.plyr.io/3.6.2/plyr.polyfilled.js"></script>
     
-    <script type="text/javascript" src="/js/prettify/prettify-jPlayer.js"></script>
     <title>Hello!</title>
-    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
-<script>
-  SC.initialize({
-    client_id: 'YOUR_CLIENT_ID',
-    redirect_uri: 'https://example.com/callback'
-  });
-</script>
+
     
+ 
     
     <!-- import the webpage's stylesheet -->
   <link rel="stylesheet" href="/style.css">
     
     <!-- import the webpage's javascript file -->
-    
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
   </head>  
   <body>
   
@@ -39,10 +34,13 @@
   
     </nav>
    
-  
+  <br>
     <script src="start.js"></script>
-    
-    
+    <br>
+       <audio id="player" controls>
+  <source src="/path/to/audio.mp3" type="audio/mp3" />
+  <source src="/path/to/audio.ogg" type="audio/ogg" />
+</audio>
     
       </body>
 </html>
