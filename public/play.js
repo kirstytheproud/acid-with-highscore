@@ -22,6 +22,7 @@ let score=[];
 var socket = io();
 var yourScore = 0;
 var highScore = ' ';
+var size;
 //particle variables
 let particles = [];
 const gravity = .25;
@@ -103,7 +104,7 @@ function setup() {
   
   //update current highscore
   socket.emit('highscore', {num:yourScore});
-  
+
 
   
   
@@ -116,8 +117,11 @@ function draw() {
   
 
   textSize(70);
-  text('STEP BACK', width/2-200, height/2);
+  //text('STEP BACK', width/2-200, height/2);
   
+  text(highScore, width/2,(height/2) )
+  //text(highScore)
+
    
   push();
     //move image by the width of image to the left
@@ -141,8 +145,7 @@ function draw() {
   //drawNose();
   
   
-  text("High Score: " + highScore, width/2,(height/2) + size)
-
+  
 
 
 

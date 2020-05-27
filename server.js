@@ -17,7 +17,7 @@ var adapter = new FileSync('.data/db.json')
 var db = low(adapter)
 
 db.defaults({highscore: [
-      {"num":0}
+      {"num":11}
     ]
   }).write();
 
