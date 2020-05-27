@@ -20,7 +20,7 @@ let score=[];
 
 
 var socket = io();
-var yourScore = 0;
+
 var highScore = ' ';
 var size;
 //particle variables
@@ -103,7 +103,7 @@ function setup() {
 	})
   
   //update current highscore
-  socket.emit('highscore', {num:yourScore});
+  socket.emit('highscore', {num:points});
 
 }
 
@@ -163,7 +163,14 @@ function draw() {
     //console.log("point scored!")
     targetX = random(targetWidth, width - targetWidth)
     targetY = random(targetWidth, height - targetWidth)
-    points++;
+    if (socket.id){ // make sure socket is established
+    points ++;
+    if (points > highScore){
+      socket.emit('highscore', {num:points});
+      console.log(highScore);
+    }
+  }
+   
     filter(INVERT);
     
     	//particles.push(new Firework(targetX, targetY));
@@ -186,6 +193,7 @@ function draw() {
     timer --;
   }
   if (timer == 0) {
+    
     textAlign(CENTER);
     text("GAME OVER", width/2-30, height/2);
     text(points, width/2-30, height/2-50);
