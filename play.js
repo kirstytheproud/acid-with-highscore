@@ -47,6 +47,7 @@ function setup() {
   
   
   //Set up video
+  function video(){
   video = createCapture(VIDEO);
   video.hide()
   
@@ -99,23 +100,30 @@ function draw() {
   
   textSize(70);
   text('STEP BACK', width/2-200, height/2);
-  text('5', width/2-200, height/2);
-  text('4', width/2-200, height/2);
-  text('3', width/2-200, height/2);
-  text('2', width/2-200, height/2);
   
-  push();
-    //move image by the width of image to the left
-  translate(video.width, 0);
-  //then scale it by -1 in the x-axis
-  //to flip the image
-  scale(-1, 1);
-  //draw video capture feed as image inside p5 canvas
- image(video, 0, 0, width, height)
-  pop();
+  let timer = 5000;
+  
+  if (millis() == timer-1000){
+   text('4', width/2-200, height/2);
+
+  }
+   
+   if (millis() == timer-2000){
+   text('3', width/2-200, height/2);
+    
+  }
   
   
+  if (millis() == timer-3000){
+   text('2', width/2-200, height/2);
+    
+  }
   
+  
+  
+  
+  
+  setTimeout(drawVideo, 6000);
   
   noStroke()
  
@@ -125,9 +133,10 @@ function draw() {
   drawRightHand()
   setInterval(drawTarget, 5000);
   
-
   
-  //setTimeout(drawTarget, 3000);
+  
+  
+
 
 
   if (dist(rightHandX, rightHandY, targetX, targetY) < targetWidth){
@@ -182,6 +191,21 @@ function draw() {
 function modelReady() {
   console.log("model is loaded")
 }
+
+function drawVideo(){
+  
+  push();
+    //move image by the width of image to the left
+  translate(video.width, 0);
+  //then scale it by -1 in the x-axis
+  //to flip the image
+  scale(-1, 1);
+  //draw video capture feed as image inside p5 canvas
+ image(video, 0, 0, width, height)
+  pop();
+  }
+  
+
 
 function drawNose() {
   if (poses.length > 0) {
@@ -253,9 +277,7 @@ function Drop() {
 }
 
 
-function Acid(){
- acidSound.play()
-}
+
 
 
 
