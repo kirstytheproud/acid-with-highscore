@@ -13,11 +13,11 @@ const http = require('http');
 // It's deliberately placed in the `.data` directory which doesn't get copied if someone remixes the project.
 var low = require('lowdb')
 var FileSync = require('lowdb/adapters/FileSync')
-var adapter = new FileSync('.data/db.json')
+var adapter = new FileSync('db.json')
 var db = low(adapter)
 
 db.defaults({highscore: [
-      {"num":11}
+      {"num":15}
     ]
   }).write();
 

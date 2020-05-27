@@ -105,9 +105,6 @@ function setup() {
   //update current highscore
   socket.emit('highscore', {num:yourScore});
 
-
-  
-  
 }
 
 
