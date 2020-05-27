@@ -165,13 +165,25 @@ function draw() {
 	particles = particles.filter((p) => p.isAlive);
 
   
+// This code is for the timer  
+  if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    timer --;
+  }
+  if (timer == 0) {
+    textAlign(CENTER);
+    text("GAME OVER", width/2-30, height/2);
+    text(points, width/2-30, height/2-50);
+  
+  }
 
   
   textSize(70);
   text(points, 20, 60);
   textSize(50);
   fill(0, 255, 0)
-
+text(timer, 580, 40);
+  
+  
   
   }
   
