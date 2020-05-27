@@ -79,6 +79,9 @@ function setup() {
 
     leftHandY = poses[0].pose.keypoints[9].position.y
     //console.log(poses)
+    
+    noseY= poses[0].pose.keypoints[1].position.x
+    noseX = poses[0].pose.keypoints[1].position.y
   })
   
  
@@ -96,40 +99,31 @@ function setup() {
 
 function draw() {
   
-  
+
   textSize(70);
   text('STEP BACK', width/2-200, height/2);
   
-  let countdown = 5000;
-  
-  if (millis() < countdown){
-   text('4', width/2-200, height/2);
-
-  }
    
-   if (millis() == timer-2000){
-   text('3', width/2-200, height/2);
-    
-  }
+  push();
+    //move image by the width of image to the left
+  translate(video.width, 0);
+  //then scale it by -1 in the x-axis
+  //to flip the image
+  scale(-1, 1);
+  //draw video capture feed as image inside p5 canvas
+ image(video, 0, 0, width, height)
+  pop();
   
-  
-  if (millis() == timer-3000){
-   text('2', width/2-200, height/2);
-    
-  }
-  
-
-  setTimeout(drawVideo, 6000);
   
   noStroke()
  
   fill(150)
 
   
-  setTimeout(drawLeftHand, 7000);
-  setTimeout(drawRightHand, 7000);
-  setInterval(drawTarget, 4000);
-  
+  drawLeftHand();
+  drawRightHand();
+  drawTarget();
+  //drawNose();
   
   
   
@@ -173,8 +167,8 @@ function draw() {
   
 
   
-  textSize(50);
-  text(points, 20, 40);
+  textSize(70);
+  text(points, 20, 60);
   textSize(50);
   fill(0, 255, 0)
 
@@ -189,24 +183,12 @@ function modelReady() {
   console.log("model is loaded")
 }
 
-function drawVideo(){
-  
-  push();
-    //move image by the width of image to the left
-  translate(video.width, 0);
-  //then scale it by -1 in the x-axis
-  //to flip the image
-  scale(-1, 1);
-  //draw video capture feed as image inside p5 canvas
- image(video, 0, 0, width, height)
-  pop();
-  }
-  
+
 
 
 function drawNose() {
   if (poses.length > 0) {
-    ellipse(noseX, noseY, 40)
+    image(smiley, noseX, noseY, 80, 80)
   }
 }
 
