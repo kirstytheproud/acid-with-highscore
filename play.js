@@ -47,7 +47,6 @@ function setup() {
   
   
   //Set up video
-  function video(){
   video = createCapture(VIDEO);
   video.hide()
   
@@ -101,9 +100,9 @@ function draw() {
   textSize(70);
   text('STEP BACK', width/2-200, height/2);
   
-  let timer = 5000;
+  let countdown = 5000;
   
-  if (millis() == timer-1000){
+  if (millis() < countdown){
    text('4', width/2-200, height/2);
 
   }
@@ -119,19 +118,17 @@ function draw() {
     
   }
   
-  
-  
-  
-  
+
   setTimeout(drawVideo, 6000);
   
   noStroke()
  
   fill(150)
 
-  drawLeftHand()
-  drawRightHand()
-  setInterval(drawTarget, 5000);
+  
+  setTimeout(drawLeftHand, 7000);
+  setTimeout(drawRightHand, 7000);
+  setInterval(drawTarget, 4000);
   
   
   
