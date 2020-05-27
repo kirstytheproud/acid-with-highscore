@@ -18,6 +18,10 @@ let tints;
 let input, button, greeting;
 let score=[];
 
+
+var socket = io();
+var yourScore = 0;
+var highScore = ' ';
 //particle variables
 let particles = [];
 const gravity = .25;
@@ -89,6 +93,17 @@ function setup() {
   for (i = 0; i < nDrops; i++) {
     drops.push(new Drop());
   }
+  
+  socket.on('connect', function() {
+
+  });
+  socket.on('updateHighScore', function(data){ 
+		highScore = data.num;
+	})
+  
+  //update current highscore
+  socket.emit('highscore', {num:yourScore});
+  
 
   
   
@@ -126,7 +141,8 @@ function draw() {
   //drawNose();
   
   
-  
+  text("High Score: " + highScore, width/2,(height/2) + size)
+
 
 
 

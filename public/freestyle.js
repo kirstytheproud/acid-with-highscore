@@ -18,6 +18,8 @@ let tints;
 let input, button, greeting;
 let score=[];
 
+
+
 //particle variables
 let particles = [];
 const gravity = .25;
@@ -86,8 +88,6 @@ function setup() {
   for (i = 0; i < nDrops; i++) {
     drops.push(new Drop());
   }
-
-  
   
 }
 
