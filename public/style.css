@@ -8,9 +8,8 @@ body {
 
 
 h1 {
-  font-style: italic;
-  color: #373fff;
-  
+  background-color: yellow;
+  font-family: arial;
 }
 
 * {
@@ -60,6 +59,7 @@ div{
 
 h2{
    background-color: yellow;
+  font-family: arial;
 }
 p{
    background-color: yellow;
