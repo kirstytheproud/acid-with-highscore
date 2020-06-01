@@ -43,11 +43,10 @@ acidSound = loadSound("https://cdn.glitch.com/10b06467-9f4e-4ab8-a9be-62476bfd29
 
 function setup() {
   
-  createCanvas(640, 480)
+  createCanvas(640, 480);
 
   //pixel setup
   	pixelDensity(1);
-//	createCanvas(600, 600);
 	endColor = color(64, 0);
 
   
@@ -113,33 +112,40 @@ function setup() {
   
 
 function draw() {
-  
- backgroud(240);
-  textSize(70);
-
+ // background
+  if(frameCount < 400){
+    textSize(70);
+fill(255, 0, 0);
   textAlign(CENTER, CENTER);
-  text('STEP BACK', width/2-200, height/2);
- 
-  if (gamestarted === false) {
-    // dos some code
+  text('STEP BACK', width/2, height/2);
+    
     
   }
+
+// if(frameCount < 10){}
+//   if (gameStarted = false) {
+//       if (frameCount % 60 == 0 && countdown > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+//     countdown --;
+
+//           textSize(70);
+
+//   textAlign(CENTER, CENTER);
+//   text('STEP BACK', width/2, height/2);
+ 
+//      text(countdown, width/2, height/2);
+    
+//   }
+    
+    
+//     gameStarted = true;
+//   }
   
    
-    
-  if (frameCount % 60 == 0 && countdown > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
-    countdown --;
-   text(countdown, width/2, height/2);
-    
-  }
-  if (countdown == 0){
-    
-  }
   
  // text('High Score '+ highScore, 100,(height/2) )
   //text(highScore)
 
-   
+   if(frameCount> 400){
   push();
     //move image by the width of image to the left
   translate(video.width, 0);
@@ -150,7 +156,7 @@ function draw() {
  image(video, 0, 0, width, height)
   pop();
   
-  }
+
   noStroke()
  
   fill(150)
@@ -230,6 +236,8 @@ text(timer, 580, 40);
   
   
   }
+  
+}
   
 
 
