@@ -17,7 +17,7 @@ let timer = 10;
 let tints;
 let input, button, greeting;
 let score=[];
-
+let countdown = 4;
 
 var socket = io();
 
@@ -115,9 +115,16 @@ function draw() {
   
 
   textSize(70);
-  //text('STEP BACK', width/2-200, height/2);
+  text('STEP BACK', width/2-200, height/2);
+ 
   
-  text(highScore, width/2,(height/2) )
+  if (frameCount % 60 == 0 && countdown > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    countdown --;
+    text(countdown, width/2, height/2);
+  }
+  if (countdown == 0){
+  
+ // text('High Score '+ highScore, 100,(height/2) )
   //text(highScore)
 
    
@@ -131,7 +138,7 @@ function draw() {
  image(video, 0, 0, width, height)
   pop();
   
-  
+  }
   noStroke()
  
   fill(150)
