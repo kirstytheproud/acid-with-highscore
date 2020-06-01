@@ -112,7 +112,7 @@ function setup() {
   
 
 function draw() {
- // background
+ //background
   if(frameCount < 300){
     textSize(100);
     textFont(bangersFont);
@@ -123,11 +123,11 @@ fill(255, 0, 0);
     
   }
 
-// 
+
   
  
 
-   if(frameCount> 300){
+if(frameCount> 300){
   push();
     //move image by the width of image to the left
   translate(video.width, 0);
@@ -196,7 +196,7 @@ fill(255, 0, 0);
 	particles = particles.filter((p) => p.isAlive);
 
   
-// This code is for the timer  
+//This code is for the timer  
   if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
     timer --;
   }
@@ -224,7 +224,7 @@ text(timer, 580, 40);
      text(points, 40, 40);
   
   
-  }
+   }
   
 }
   
