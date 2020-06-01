@@ -114,19 +114,18 @@ function setup() {
 function draw() {
  // background
   if(frameCount < 300){
-    textSize(70);
+    textSize(100);
     textFont(bangersFont);
 fill(255, 0, 0);
   textAlign(CENTER, CENTER);
-  text('STEP BACK', width/2, height/2);
+  text('STEP BACK PLEASE', width/2, height/2);
     
     
   }
 
 // 
   
- // text('High Score '+ highScore, 100,(height/2) )
-  //text(highScore)
+ 
 
    if(frameCount> 300){
   push();
@@ -188,9 +187,7 @@ fill(255, 0, 0);
      
     
   }
-  fill(0, 100, 255);
-  text(points, 20, 60);
-
+ 
   //trying to setup particle interaction
   particles.forEach((p) => {
 		p.step();
@@ -205,10 +202,16 @@ fill(255, 0, 0);
   }
   if (timer == 0) {
     
-    textAlign(CENTER);
-    text("GAME OVER", width/2-30, height/2);
-    text(points, width/2-30, height/2-50);
+    textAlign(CENTER, CENTER);
+    textSize(100);
+    text("GAME OVER", width/2, height/2-50);
+    text(points, width/2, height/2-150);
+    textSize(70);
+    text('High Score', width/2 , height/2 + 100 );
+    text(highScore, width/2, height/2 +150)
   
+  
+
   }
 
   
@@ -217,7 +220,8 @@ fill(255, 0, 0);
   textSize(50);
   fill(0, 255, 0)
 text(timer, 580, 40);
-  
+   fill(0, 100, 255);
+  text(points, 20, 60);
   
   
   }
