@@ -9,7 +9,7 @@ body {
 
 h1 {
   background-color: yellow;
-  font-family: arial;
+  font-family: courier new;
 }
 
 * {
@@ -59,7 +59,10 @@ div{
 
 h2{
    background-color: yellow;
-  font-family: arial;
+  font-family: courier new;
+/*  padding-right: 300px;
+  margin-right: 300px;
+  */
 }
 p{
    background-color: yellow;
