@@ -14,11 +14,8 @@ let targetY;
 let targetWidth = 50;
 let points;
 let timer = 10;
-let tints;
-let input, button, greeting;
-let score=[];
 let countdown = 4;
-let gameStarted = false;
+let targets = true;
 
 var socket = io();
 
@@ -113,9 +110,9 @@ function setup() {
 
 function draw() {
  //background
-  if(frameCount < 300){
+  if(frameCount < 200){
     textSize(100);
-    textFont(bangersFont);
+    //textFont(bangersFont);
 fill(255, 0, 0);
   textAlign(CENTER, CENTER);
   text('STEP BACK PLEASE', width/2, height/2);
@@ -127,7 +124,7 @@ fill(255, 0, 0);
   
  
 
-if(frameCount> 300){
+if(frameCount> 200){
   push();
     //move image by the width of image to the left
   translate(video.width, 0);
@@ -201,18 +198,22 @@ if(frameCount> 300){
     timer --;
   }
   if (timer == 0) {
+  
+    clear();
+  
     
     fill(255, 0, 0, 200);
     textAlign(CENTER, CENTER);
     textSize(110);
     text("GAME OVER", width/2, height/2-40);
+    textSize(100);
     text(points, width/2, height/2-150);
     textSize(60);
     fill(255, 0, 0, 160);
     text('High Score', width/2 , height/2 + 110 );
     text(highScore, width/2, height/2 +160)
   
-  
+    
 
   }
 
@@ -261,8 +262,11 @@ function drawRightHand() {
 
 function drawTarget() {
  // fill(255, 0, 0)
+  if(targets == false){
+    ellipse(targetX, targetY, 1, 1)
+  } else{
   image(smiley, targetX, targetY, 55, 55)
-
+  }
 }
 
 
