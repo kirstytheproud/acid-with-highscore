@@ -39,8 +39,8 @@ ul li {
 ul li a {
   display: block;
   text-decoration: none;
-  font-size: 16px;
-  font-family: arial;
+  font-size: 20px;
+  font-family: courier new;
   color: yellow;
   padding: 0 60px; 
 }
