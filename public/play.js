@@ -38,7 +38,7 @@ function preload() {
   
   smiley = loadImage("https://cdn.glitch.com/10b06467-9f4e-4ab8-a9be-62476bfd291c%2FSmiley%20face.png?v=1589979771432");
 acidSound = loadSound("https://cdn.glitch.com/10b06467-9f4e-4ab8-a9be-62476bfd291c%2FArmando%20-%20The%20Future%20(Armando's%20Original).mp3?v=1589989732936")
-
+bangersFont = loadFont("https://cdn.glitch.com/30121342-2dfd-4ac3-8412-a1c5263328c7%2FBangers-Regular.ttf?v=1591022475536")
 }
 
 function setup() {
@@ -113,8 +113,9 @@ function setup() {
 
 function draw() {
  // background
-  if(frameCount < 400){
+  if(frameCount < 300){
     textSize(70);
+    textFont(bangersFont);
 fill(255, 0, 0);
   textAlign(CENTER, CENTER);
   text('STEP BACK', width/2, height/2);
@@ -122,30 +123,12 @@ fill(255, 0, 0);
     
   }
 
-// if(frameCount < 10){}
-//   if (gameStarted = false) {
-//       if (frameCount % 60 == 0 && countdown > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
-//     countdown --;
-
-//           textSize(70);
-
-//   textAlign(CENTER, CENTER);
-//   text('STEP BACK', width/2, height/2);
- 
-//      text(countdown, width/2, height/2);
-    
-//   }
-    
-    
-//     gameStarted = true;
-//   }
-  
-   
+// 
   
  // text('High Score '+ highScore, 100,(height/2) )
   //text(highScore)
 
-   if(frameCount> 400){
+   if(frameCount> 300){
   push();
     //move image by the width of image to the left
   translate(video.width, 0);
@@ -202,9 +185,11 @@ fill(255, 0, 0);
     	//particles.push(new Firework(targetX, targetY));
     particles.push(new Firework(leftHandX, leftHandY));
     
+     
+    
   }
-  
-  
+  fill(0, 100, 255);
+  text(points, 20, 60);
 
   //trying to setup particle interaction
   particles.forEach((p) => {
@@ -228,7 +213,7 @@ fill(255, 0, 0);
 
   
   textSize(70);
-  text(points, 20, 60);
+ 
   textSize(50);
   fill(0, 255, 0)
 text(timer, 580, 40);
