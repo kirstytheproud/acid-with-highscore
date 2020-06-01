@@ -17,10 +17,12 @@ let timer = 10;
 let countdown = 4;
 let targets = true;
 
+// variables for highscore with sockets
 var socket = io();
 
 var highScore = ' ';
 var size;
+
 //particle variables
 let particles = [];
 const gravity = .25;
@@ -80,7 +82,7 @@ function setup() {
     leftHandX = map(oldleftHandX, 0, width, width, 0)
 
     leftHandY = poses[0].pose.keypoints[9].position.y
-    //console.log(poses)
+    console.log(poses)
     
     noseY= poses[0].pose.keypoints[1].position.x
     noseX = poses[0].pose.keypoints[1].position.y
@@ -109,15 +111,13 @@ function setup() {
   
 
 function draw() {
- //background
+
   if(frameCount < 200){
     textSize(100);
-    //textFont(bangersFont);
+    textFont(bangersFont);
 fill(255, 0, 0);
   textAlign(CENTER, CENTER);
   text('STEP BACK PLEASE', width/2, height/2);
-    
-    
   }
 
 
@@ -144,7 +144,7 @@ if(frameCount> 200){
   drawLeftHand();
   drawRightHand();
   drawTarget();
-  //drawNose();
+  
   
   
   
@@ -160,7 +160,7 @@ if(frameCount> 200){
     points += 1;
     textSize(80);
     
-    	//particles.push(new Firework(targetX, targetY));
+  
   particles.push(new Firework(rightHandX, rightHandY));
   }
 
@@ -199,7 +199,6 @@ if(frameCount> 200){
   }
   if (timer == 0) {
   
-    clear();
   
     
     fill(255, 0, 0, 200);
