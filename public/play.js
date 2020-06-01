@@ -90,11 +90,12 @@ function setup() {
   })
   
  
-
+//Acid
   for (i = 0; i < nDrops; i++) {
     drops.push(new Drop());
   }
   
+  //Using socket to save highscores
   socket.on('connect', function() {
 
   });
