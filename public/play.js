@@ -202,13 +202,15 @@ if(frameCount> 300){
   }
   if (timer == 0) {
     
+    fill(255, 0, 0, 200);
     textAlign(CENTER, CENTER);
-    textSize(100);
-    text("GAME OVER", width/2, height/2-50);
+    textSize(110);
+    text("GAME OVER", width/2, height/2-40);
     text(points, width/2, height/2-150);
-    textSize(70);
-    text('High Score', width/2 , height/2 + 100 );
-    text(highScore, width/2, height/2 +150)
+    textSize(60);
+    fill(255, 0, 0, 160);
+    text('High Score', width/2 , height/2 + 110 );
+    text(highScore, width/2, height/2 +160)
   
   
 
