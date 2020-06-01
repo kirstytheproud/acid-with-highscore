@@ -18,6 +18,7 @@ let tints;
 let input, button, greeting;
 let score=[];
 let countdown = 4;
+let gameStarted = false;
 
 var socket = io();
 
@@ -119,13 +120,21 @@ function draw() {
   textAlign(CENTER, CENTER);
   text('STEP BACK', width/2-200, height/2);
  
+  if (gamestarted === false) {
+    // dos some code
+    
+  }
   
+   
+    
   if (frameCount % 60 == 0 && countdown > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
     countdown --;
-  
-    text(countdown, width/2, height/2);
+   text(countdown, width/2, height/2);
+    
   }
   if (countdown == 0){
+    
+  }
   
  // text('High Score '+ highScore, 100,(height/2) )
   //text(highScore)
