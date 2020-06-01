@@ -215,13 +215,13 @@ fill(255, 0, 0);
   }
 
   
-  textSize(70);
+  textSize(60);
  
-  textSize(50);
   fill(0, 255, 0)
 text(timer, 580, 40);
-   fill(0, 100, 255);
-  text(points, 20, 60);
+   fill(0, 255, 255);
+
+     text(points, 40, 40);
   
   
   }
