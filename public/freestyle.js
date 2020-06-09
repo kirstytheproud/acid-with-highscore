@@ -95,6 +95,7 @@ function setup() {
 
 function draw() {
   
+  //Intro
 if(frameCount < 200){
     textSize(100);
     textFont(bangersFont);
@@ -105,7 +106,7 @@ fill(255, 0, 0);
 
 
   
- 
+ //give user timer to prepare
 
 if(frameCount> 200){
   push();
@@ -129,8 +130,7 @@ if(frameCount> 200){
   
 
   
-  //setTimeout(drawTarget, 3000);
-
+ 
 
   if (dist(rightHandX, rightHandY, targetX, targetY) < targetWidth){
     
@@ -141,7 +141,7 @@ if(frameCount> 200){
     points += 1;
     textSize(80);
     
-    	//particles.push(new Firework(targetX, targetY));
+   
   particles.push(new Firework(rightHandX, rightHandY));
   }
 
@@ -152,7 +152,6 @@ if(frameCount> 200){
     points++;
     filter(INVERT);
     
-    	//particles.push(new Firework(targetX, targetY));
     particles.push(new Firework(leftHandX, leftHandY));
     
   }
@@ -168,7 +167,7 @@ if(frameCount> 200){
 
   
 
-  
+  // Score
   textSize(50);
   text(points, 20, 40);
   textSize(50);
@@ -212,7 +211,7 @@ function drawTarget() {
 
 
 
-
+//trying to incorporate Acid Rain animation that is on index.html
 var acceleration = 0.08;
 var nDrops = 30;
 var drops = [];
