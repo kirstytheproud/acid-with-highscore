@@ -13,7 +13,6 @@ let targetX;
 let targetY;
 let targetWidth = 50;
 let points;
-let timer = 10;
 let tints;
 let input, button, greeting;
 let score=[];
@@ -34,7 +33,7 @@ function preload() {
   
   smiley = loadImage("https://cdn.glitch.com/10b06467-9f4e-4ab8-a9be-62476bfd291c%2FSmiley%20face.png?v=1589979771432");
 acidSound = loadSound("https://cdn.glitch.com/10b06467-9f4e-4ab8-a9be-62476bfd291c%2FArmando%20-%20The%20Future%20(Armando's%20Original).mp3?v=1589989732936")
-
+bangersFont = loadFont("https://cdn.glitch.com/30121342-2dfd-4ac3-8412-a1c5263328c7%2FBangers-Regular.ttf?v=1591022475536")
 }
 
 function setup() {
@@ -96,10 +95,19 @@ function setup() {
 
 function draw() {
   
+if(frameCount < 200){
+    textSize(100);
+    textFont(bangersFont);
+fill(255, 0, 0);
+  textAlign(CENTER, CENTER);
+  text('STEP BACK PLEASE', width/2, height/2);
+  }
+
+
   
-  textSize(70);
-  text('STEP BACK', width/2-200, height/2);
-  
+ 
+
+if(frameCount> 200){
   push();
     //move image by the width of image to the left
   translate(video.width, 0);
@@ -109,8 +117,6 @@ function draw() {
   //draw video capture feed as image inside p5 canvas
  image(video, 0, 0, width, height)
   pop();
-  
-  
   
   
   noStroke()
@@ -170,7 +176,7 @@ function draw() {
 
   
   }
-  
+}
 
 
 

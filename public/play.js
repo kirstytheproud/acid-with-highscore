@@ -13,7 +13,7 @@ let targetX;
 let targetY;
 let targetWidth = 50;
 let points;
-let timer = 10;
+let timer = 20;
 let countdown = 4;
 let targets = true;
 
